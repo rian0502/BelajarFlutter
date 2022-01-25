@@ -13,21 +13,33 @@ class FlexibelTuorial extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Container(
+            child: Flexible(
+                flex: 1,
+                child: Container(
+                  margin: const EdgeInsets.all(5),
+                  color: Colors.pinkAccent,
+                )
+            )
+          ),
           Flexible(
-            flex: 1,
+              flex: 2,
               child: Container(
-            color: Colors.pinkAccent,
-          )),
+                margin: const EdgeInsets.all(5),
+                color: Colors.yellowAccent,
+              )),
           Flexible(
-            flex: 2,
+              flex: 2,
               child: Container(
-            color: Colors.pinkAccent,
-          )),
+                margin: const EdgeInsets.all(5),
+                color: Colors.green,
+              )),
           Flexible(
-            flex: 2,
+              flex: 2,
               child: Container(
-            color: Colors.pinkAccent,
-          ))
+                margin: const EdgeInsets.all(5),
+                color: Colors.lightBlue,
+              ))
         ],
       ),
     );
