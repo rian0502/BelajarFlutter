@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'Views/flexibel_wdiget.dart';
+import 'Views/hero_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const FlexibelTuorial(),
+      home: const HeroAnimation(),
     );
   }
 }
