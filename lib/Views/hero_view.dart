@@ -59,25 +59,25 @@ class _HeroAnimationState extends State<HeroAnimation> {
             ),
             Card(
               child: Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: Image.asset('images/whatsapp.png'),
               ),
             ),
             Card(
               child: Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: Image.asset('images/twitter.png'),
               ),
             ),
             Card(
               child: Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: Image.asset('images/tiktok.png'),
               ),
             ),
             Card(
               child: Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: Image.asset('images/instagram.png'),
               ),
             ),
@@ -143,7 +143,7 @@ class _HeroAnimationState extends State<HeroAnimation> {
         ));
   }
 
-  void _halaman_telegram(
+   _halaman_telegram(
       BuildContext context, String title, String tag, String image) {
     Navigator.of(context).push(MaterialPageRoute(
         builder: (BuildContext context) => Scaffold(
