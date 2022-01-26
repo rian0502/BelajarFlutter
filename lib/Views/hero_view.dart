@@ -10,23 +10,47 @@ class _HeroAnimationState extends State<HeroAnimation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.amber,
         appBar: AppBar(
           title: const Text('Animasi Hero'),
           backgroundColor: Colors.orange,
           centerTitle: true,
         ),
         body: GridView.count(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: [
-            Card(
-              child: Container(
-                margin: EdgeInsets.all(20),
-                child: Image.asset('images/facebook.png'),
-              ),
-            ),
+            GestureDetector(
+                onTap: () {
+                  _halaman_telegram(
+                      context, 'Facebook', 'facebook', 'images/facebook.png');
+                },
+                child: Card(
+                  child: Hero(
+                      tag: 'Facebook',
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Image.asset(
+                              'images/facebook.png',
+                              height: 120,
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 5),
+                            child: Text(
+                              'Facebook',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          )
+                        ],
+                      )),
+                )),
             Card(
               child: Container(
                 margin: EdgeInsets.all(20),
@@ -63,12 +87,28 @@ class _HeroAnimationState extends State<HeroAnimation> {
                       context, 'Snap Chat', 'snapchat', 'images/snapchat.png');
                 },
                 child: Card(
-                  child: Container(
-                    margin: EdgeInsets.all(20),
-                    child: Hero(
-                        tag: 'snapchat',
-                        child: Image.asset('images/snapchat.png')),
-                  ),
+                  child: Hero(
+                      tag: 'snapchat',
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Image.asset(
+                              'images/snapchat.png',
+                              height: 120,
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 5),
+                            child: Text(
+                              'Snapchat',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          )
+                        ],
+                      )),
                 )),
             GestureDetector(
                 onTap: () {
@@ -76,12 +116,28 @@ class _HeroAnimationState extends State<HeroAnimation> {
                       context, 'Telegram', 'telegram', 'images/telegram.png');
                 },
                 child: Card(
-                  child: Container(
-                    margin: EdgeInsets.all(20),
-                    child: Hero(
-                        tag: 'telegram',
-                        child: Image.asset('images/telegram.png')),
-                  ),
+                  child: Hero(
+                      tag: 'telegram',
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Image.asset(
+                              'images/telegram.png',
+                              height: 120,
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 5),
+                            child: Text(
+                              'Telegram',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20.0),
+                            ),
+                          )
+                        ],
+                      )),
                 )),
           ],
         ));
@@ -97,9 +153,47 @@ class _HeroAnimationState extends State<HeroAnimation> {
               ),
               body: Center(
                 child: Column(
-                  children: [Hero(tag: tag, child: Image.asset(image,height: 200,))],
+                  children: [
+                    Hero(
+                        tag: tag,
+                        child: Image.asset(
+                          image,
+                          height: 200,
+                        ))
+                  ],
                 ),
               ),
             )));
+  }
+
+  void _makeMenu(String title, String tag, String image) {
+    GestureDetector(
+        onTap: () {
+          _halaman_telegram(context, title, tag, image);
+        },
+        child: Card(
+          child: Hero(
+              tag: tag,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Image.asset(
+                      image,
+                      height: 120,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 5),
+                    child: Text(
+                      'title',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20.0),
+                    ),
+                  )
+                ],
+              )),
+        ));
   }
 }
