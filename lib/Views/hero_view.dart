@@ -53,7 +53,7 @@ class _HeroAnimationState extends State<HeroAnimation> {
                 )),
             Card(
               child: Container(
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 child: Image.asset('images/line.png'),
               ),
             ),
@@ -164,36 +164,5 @@ class _HeroAnimationState extends State<HeroAnimation> {
                 ),
               ),
             )));
-  }
-
-  void _makeMenu(String title, String tag, String image) {
-    GestureDetector(
-        onTap: () {
-          _halaman_telegram(context, title, tag, image);
-        },
-        child: Card(
-          child: Hero(
-              tag: tag,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Image.asset(
-                      image,
-                      height: 120,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 5),
-                    child: Text(
-                      'title',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20.0),
-                    ),
-                  )
-                ],
-              )),
-        ));
   }
 }
